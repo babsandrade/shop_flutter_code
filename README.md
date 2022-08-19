@@ -3,7 +3,7 @@
 </h2>
 <div ><br>
 
-  <img align="right" alt="Babs-pic"  style="border-radius:150px;" src="https://media.discordapp.net/attachments/1009892365365944451/1010247284971278456/Building_a_Shop_prototype_with_Flutter_1.png">
+  <img align="right" alt="Babs-pic"  style="border-radius:150px;" src="https://media.discordapp.net/attachments/1009892365365944451/1010268234643165274/Shop_app_flutter.png">
 </div>
 <h2 align="center">
 .</h2>
