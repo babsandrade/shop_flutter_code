@@ -14,13 +14,13 @@ class AppDrawer extends StatelessWidget {
       child: Column(
         children: [
           AppBar(
-            title: Text('Bem vindo, Usuário!'),
+            title: Text('Welcome, User!'),
             automaticallyImplyLeading: false,
           ),
           Divider(),
           ListTile(
             leading: Icon(Icons.shop),
-            title: Text('Loja'),
+            title: Text('Marketplace'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.AUTH_OR_HOME,
@@ -30,7 +30,7 @@ class AppDrawer extends StatelessWidget {
           Divider(),
           ListTile(
             leading: Icon(Icons.payment),
-            title: Text('Pedidos'),
+            title: Text('Orders'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.ORDERS,
@@ -40,7 +40,7 @@ class AppDrawer extends StatelessWidget {
           Divider(),
           ListTile(
             leading: Icon(Icons.edit),
-            title: Text('Gerenciar produtos'),
+            title: Text('General management'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(
                 AppRoutes.PRODUCTS,
@@ -50,7 +50,7 @@ class AppDrawer extends StatelessWidget {
           Divider(),
           ListTile(
             leading: Icon(Icons.exit_to_app),
-            title: Text('Sair'),
+            title: Text('Logout'),
             onTap: () {
               Provider.of<Auth>(context, listen: false).logout();
               Navigator.of(context).pushReplacementNamed(

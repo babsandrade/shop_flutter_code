@@ -40,20 +40,20 @@ class CartItemWidget extends StatelessWidget {
         return showDialog(
           context: context,
           builder: (ctx) => AlertDialog(
-            title: Text('Tem certeza?'),
-            content: Text('Quer remover o item do carrinho?'),
+            title: Text('Are you sure?'),
+            content: Text('Remove this item from yout cart? '),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop(false);
                 },
-                child: Text('Nao'),
+                child: Text('No'),
               ),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pop(true);
                 },
-                child: Text('Sim'),
+                child: Text('Yes'),
               ),
             ],
           ),

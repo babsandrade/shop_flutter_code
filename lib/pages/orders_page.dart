@@ -11,7 +11,7 @@ class OrdersPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meus Pedidos'),
+        title: Text('My orders'),
       ),
       drawer: AppDrawer(),
       body: FutureBuilder(
@@ -21,7 +21,7 @@ class OrdersPage extends StatelessWidget {
               return Center(child: CircularProgressIndicator());
             } else if (snapshot.error != null) {
               return Center(
-                child: Text('Ocorreu um erro!'),
+                child: Text('An error ocurred!'),
               );
             } else {
               return Consumer<OrderList>(

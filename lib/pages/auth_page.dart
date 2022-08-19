@@ -19,11 +19,11 @@ class AuthPage extends StatelessWidget {
               // ignore: prefer_const_constructors
               gradient: LinearGradient(
                 colors: [
-                  Color.fromRGBO(215, 117, 255, 0.5),
-                  Color.fromRGBO(255, 188, 117, 0.9),
+                  Color(0x7C4506B1),
+                  Color(0x62FD4C00),
                 ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
           ),
@@ -42,23 +42,24 @@ class AuthPage extends StatelessWidget {
                     horizontal: 70,
                   ),
                   // cascade operator
-                  transform: Matrix4.rotationZ(-8 * pi / 180)..translate(-10.0),
+                  // transform: Matrix4.rotationZ(-8 * pi / 180)..translate(-10.0),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Colors.deepOrange.shade900,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 8,
-                        color: Colors.black26,
-                        offset: Offset(0, 2),
-                      ),
-                    ],
+                    color: Color.fromARGB(0, 191, 54, 12),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     blurRadius: 8,
+                    //     color: Colors.black26,
+                    //     offset: Offset(0, 2),
+                    //   ),
+                    // ],
                   ),
                   child: Text(
-                    'Minha Loja',
+                    'Store ',
                     style: TextStyle(
+                      
                       fontSize: 45,
-                      fontFamily: 'Anton',
+                      fontFamily: 'Lato',
                       color: Colors.white,
                     ),
                   ),

@@ -17,11 +17,19 @@ class ProductGridItem extends StatelessWidget {
     return ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: GridTile(
+          header: GridTileBar(
+            title: Text(
+              product.title,
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            ),
+            backgroundColor: Colors.gabs,
+          ),
           // ignore: sort_child_properties_last
           child: GestureDetector(
             child: Image.network(
               product.imageUrl,
-              fit: BoxFit.cover,
+              fit: BoxFit.fitWidth,
             ),
             onTap: () {
               Navigator.of(context)
@@ -30,10 +38,14 @@ class ProductGridItem extends StatelessWidget {
           ),
           footer: GridTileBar(
             title: Text(
-              product.title,
+              'R\$ ${product.price.toString()}',
               textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: Colors.babs,
+                  fontSize: 10,
+                  fontWeight: FontWeight.bold),
             ),
-            backgroundColor: Colors.black54,
+            backgroundColor: Color.fromARGB(34, 127, 127, 127),
             leading: Consumer<Product>(
               builder: (ctx, product, _) => IconButton(
                 onPressed: () {
@@ -45,17 +57,17 @@ class ProductGridItem extends StatelessWidget {
                 icon: Icon(product.isFavorite
                     ? Icons.favorite
                     : Icons.favorite_border),
-                iconSize: 20,
-                color: Theme.of(context).colorScheme.secondary,
+                iconSize: 17,
+                color: Color.fromARGB(184, 253, 76, 0),
               ),
             ),
             trailing: IconButton(
               icon: Icon(Icons.shopping_cart),
-              iconSize: 20,
+              iconSize: 17,
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Produto adicionado com sucesso!'),
+                    content: Text('Product seccessfully added!'),
                     duration: Duration(milliseconds: 500),
                     action: SnackBarAction(
                       label: 'DESFAZER',
@@ -67,7 +79,7 @@ class ProductGridItem extends StatelessWidget {
                 );
                 cart.addItem(product);
               },
-              color: Theme.of(context).colorScheme.secondary,
+              color: Color.fromARGB(184, 253, 76, 0),
             ),
           ),
         ));

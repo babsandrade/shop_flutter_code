@@ -93,7 +93,7 @@ class _AuthFormState extends State<AuthForm> {
     return Card(
       elevation: 8,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(20),
       ),
       child: Container(
         padding: const EdgeInsets.all(16),
@@ -105,20 +105,20 @@ class _AuthFormState extends State<AuthForm> {
             children: [
               TextFormField(
                 style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(labelText: 'E-mail'),
+                decoration: InputDecoration(labelText: 'Email'),
                 keyboardType: TextInputType.emailAddress,
                 onSaved: (email) => _authData['email'] = email ?? '',
                 validator: (_email) {
                   final email = _email ?? '';
                   if (email.trim().isEmpty || !email.contains('@')) {
-                    return 'Informe um e-mail válido.';
+                    return 'Please enter a valid email address.';
                   }
                   return null;
                 },
               ),
               TextFormField(
                 style: TextStyle(color: Colors.black),
-                decoration: InputDecoration(labelText: 'Senha'),
+                decoration: InputDecoration(labelText: 'Password'),
                 keyboardType: TextInputType.emailAddress,
                 obscureText: true,
                 controller: _passwordController,
@@ -126,7 +126,7 @@ class _AuthFormState extends State<AuthForm> {
                 validator: (_password) {
                   final password = _password ?? '';
                   if (password.isEmpty || password.length < 5) {
-                    return 'Informe uma senha válida';
+                    return 'PLease enter a valid password. Try again. ';
                   }
                   return null;
                 },
@@ -134,7 +134,7 @@ class _AuthFormState extends State<AuthForm> {
               if (_isSignup())
                 TextFormField(
                   style: TextStyle(color: Colors.black),
-                  decoration: InputDecoration(labelText: 'Confirmar Senha'),
+                  decoration: InputDecoration(labelText: 'Confirm password.'),
                   keyboardType: TextInputType.emailAddress,
                   obscureText: true,
                   validator: _isLogin()
@@ -142,7 +142,7 @@ class _AuthFormState extends State<AuthForm> {
                       : (_password) {
                           final password = _password ?? '';
                           if (password != _passwordController.text) {
-                            return 'Senhas informadas não conferem.';
+                            return "Those passwords didn't match. Try again";
                           }
                           return null;
                         },
@@ -163,14 +163,16 @@ class _AuthFormState extends State<AuthForm> {
                     ),
                   ),
                   child: Text(
-                    _authMode == AuthMode.Login ? 'ENTRAR' : 'REGISTRAR',
+                    _authMode == AuthMode.Login ? 'Log In' : 'Sign Up',
                   ),
                 ),
               Spacer(),
               TextButton(
                 onPressed: _switchAuthMode,
                 child: Text(
-                  _isLogin() ? 'DESEJA REGISTRAR?' : 'JÁ POSSUI CONTA?',
+                  _isLogin()
+                      ? "Don't have an account yet? Sign up"
+                      : 'Already have an account? Sign in',
                 ),
               )
             ],

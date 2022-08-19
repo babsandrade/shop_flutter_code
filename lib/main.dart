@@ -53,8 +53,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-            primarySwatch: Colors.indigo,
-            accentColor: Colors.deepOrange,
+            primarySwatch: Colors.babs,
+            accentColor: Color.fromARGB(247, 253, 76, 0),
             fontFamily: 'Lato'),
         // home: ProductsOverviewPage(),
         routes: {

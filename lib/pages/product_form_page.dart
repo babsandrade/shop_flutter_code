@@ -107,7 +107,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Formulário de produto'),
+        title: Text('Product Form'),
         actions: [IconButton(onPressed: _submitForm, icon: Icon(Icons.save))],
       ),
       body: _isLoading
@@ -122,7 +122,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     children: [
                       TextFormField(
                         initialValue: (_formData['title'] ?? '') as String,
-                        decoration: InputDecoration(labelText: 'Nome'),
+                        decoration: InputDecoration(labelText: 'Title'),
                         textInputAction: TextInputAction.next,
                         onFieldSubmitted: (_) {
                           FocusScope.of(context).requestFocus(_priceFocus);
@@ -132,11 +132,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                           final title = _title ?? '';
 
                           if (title.trim().isEmpty) {
-                            return 'Nome é obrigatório.';
+                            return 'Title is required.';
                           }
 
                           if (title.trim().length < 3) {
-                            return 'Nome precisa conter no mínimo 3 letras.';
+                            return 'At least 3 characters.';
                           }
 
                           return null;
@@ -144,7 +144,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                       ),
                       TextFormField(
                         initialValue: _formData['price']?.toString(),
-                        decoration: InputDecoration(labelText: 'Preço'),
+                        decoration: InputDecoration(labelText: 'Price'),
                         textInputAction: TextInputAction.next,
                         focusNode: _priceFocus,
                         keyboardType: TextInputType.numberWithOptions(
@@ -160,7 +160,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                           final priceString = _price ?? '-1';
                           final price = double.tryParse(priceString) ?? -1;
                           if (price <= 0) {
-                            return 'Informe um preço válido!';
+                            return 'Enter a valid price!';
                           }
 
                           return null;
@@ -168,7 +168,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                       ),
                       TextFormField(
                         initialValue: _formData['description']?.toString(),
-                        decoration: InputDecoration(labelText: 'Descriçao'),
+                        decoration: InputDecoration(labelText: 'Description'),
                         focusNode: _descriptionfocus,
                         keyboardType: TextInputType.multiline,
                         maxLines: 3,
@@ -181,11 +181,11 @@ class _ProductFormPageState extends State<ProductFormPage> {
                           final description = _description ?? '';
 
                           if (description.trim().isEmpty) {
-                            return 'Descricao é obrigatória.';
+                            return 'Description is required.';
                           }
 
                           if (description.trim().length < 10) {
-                            return 'Precisa conter no mínimo 10 letras.';
+                            return 'At least 10 characters.';
                           }
 
                           return null;
@@ -197,7 +197,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                           Expanded(
                             child: TextFormField(
                               decoration:
-                                  InputDecoration(labelText: 'URL da Imagem'),
+                                  InputDecoration(labelText: 'Image URL'),
                               focusNode: _imageUrlFocus,
                               keyboardType: TextInputType.url,
                               textInputAction: TextInputAction.done,
@@ -208,7 +208,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                               validator: (_imageUrl) {
                                 final imageUrl = _imageUrl ?? '';
                                 if (!isValidImageUrl(imageUrl)) {
-                                  return 'Informe uma Url válida!';
+                                  return 'Enter a valid URL!';
                                 }
                               },
                             ),
@@ -225,7 +225,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                                     color: Colors.blueGrey, width: 1)),
                             alignment: Alignment.center,
                             child: _imageUrlController.text.isEmpty
-                                ? Text('Informe a URL')
+                                ? Text('Enter an URL')
                                 : Image.network(
                                     _imageUrlController.text,
                                     width: 100,

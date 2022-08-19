@@ -29,7 +29,8 @@ class ProductDetailPage extends StatelessWidget {
           SizedBox(height: 10),
           Text(
             'R\$ ${product.price}',
-            style: TextStyle(color: Colors.blueGrey, fontSize: 20),
+            style: TextStyle(
+                color: Colors.babs, fontSize: 25, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 10,
@@ -40,6 +41,7 @@ class ProductDetailPage extends StatelessWidget {
             child: Text(
               product.description,
               textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
             ),
           )
         ],
