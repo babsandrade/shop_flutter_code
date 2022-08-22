@@ -43,9 +43,10 @@ The course has a workload of approximately 55 hours, divided into 25 modules. Th
 ## 🚀 Technologies and resources
 This project was developed with:
 
-Visual Studio Code: Is a source-code editor made by Microsoft for Windows, Linux and macOS.
-Flutter: Is Google's open-source technology for creating mobile, desktop, and web apps with a single codebase.
-Firebase: Is a Backend-as-a-Service (BaaS) app development platform that provides hosted backend services such as a realtime database, cloud storage, authentication, crash reporting, machine learning, remote configuration, and hosting for your static files.
+- [**Visual Studio Code**](https://code.visualstudio.com/):  Is a source-code editor made by Microsoft for Windows, Linux and macOS.
+- [**Dart**](https://dart.dev/): Programming language.
+- [**Flutter**](https://flutter.dev/): Is Google's open-source technology for creating mobile, desktop, and web apps with a single codebase.
+- [**Firebase**](https://firebase.google.com): Is a Backend-as-a-Service (BaaS) app development platform that provides hosted backend services such as a realtime database, cloud storage, authentication, crash reporting, machine learning, remote configuration, and hosting for your static files.
 
 ## 📲 Contact
 Contact me by email or LinkedIn:
